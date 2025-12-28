@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Constitution Quiz Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN / REGISTER -->
+<div class="page" id="authPage">
+  <div class="auth-box">
+    <div class="book">
+      <span>CONSTITUTION</span>
+    </div>
+
+    <h2 id="authTitle">Login</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button id="authBtn">Login</button>
+    <p class="switch" id="toggleAuth">New user? Register</p>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div class="page hidden" id="quizPage">
+  <div class="quiz-box">
+    <h2>Indian Constitution Quiz</h2>
+    <div id="timer">Time: 10</div>
+    <h3 id="question"></h3>
+    <div id="options"></div>
+    <div id="info"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+<p class="switch" id="toggleAuth">New user? Register</p>
+<p class="forgot" id="forgotPass">Forgot password?</p>
+<div class="book">
+  <div class="page left">
+    <span>CONSTITUTION</span>
+  </div>
+  <div class="page right">
+    <span>OF INDIA</span>
+  </div>
+</div>

@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: radial-gradient(circle at top, #1d3557, #0b132b);
+    min-height: 100vh;
+    color: #222;
+}
+
+/* COMMON */
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ================= LOGIN / REGISTER ================= */
+.auth-box {
+    background: linear-gradient(180deg, #ffffff, #f1f5f9);
+    width: 390px;
+    padding: 35px 30px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+    animation: pop 0.6s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Constitution Book */
+.book {
+    width: 150px;
+    height: 100px;
+    margin: 0 auto 22px;
+    position: relative;
+}
+
+.book::before,
+.book::after {
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 100px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #c1121f, #780000);
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.2);
+}
+
+.book::after {
+    left: 75px;
+    background: linear-gradient(135deg, #780000, #3a0000);
+}
+
+.book span {
+    position: absolute;
+    width: 100%;
+    top: 38px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Auth text */
+.auth-box h2 {
+    margin-bottom: 18px;
+    color: #1d3557;
+}
+
+/* Inputs */
+.auth-box input {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    font-size: 15px;
+}
+
+.auth-box input:focus {
+    outline: none;
+    border-color: #1d3557;
+    box-shadow: 0 0 0 2px rgba(29,53,87,0.15);
+}
+
+/* Auth Button */
+.auth-box button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 12px;
+    background: linear-gradient(135deg, #1d3557, #457b9d);
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.auth-box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(29,53,87,0.5);
+}
+
+.switch,
+.forgot {
+    margin-top: 14px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.switch {
+    color: #1d3557;
+    text-decoration: underline;
+}
+
+.forgot {
+    color: #e63946;
+    text-decoration: underline;
+}
+
+/* ================= QUIZ ================= */
+.quiz-box {
+    background: linear-gradient(180deg, #ffffff, #f8fafc);
+    width: 560px;
+    padding: 35px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.7);
+    animation: pop 0.5s ease;
+}
+
+.quiz-box h2 {
+    color: #1d3557;
+    margin-bottom: 10px;
+}
+
+/* Timer */
+#timer {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ffccd5, #ffe5e5);
+    color: #b11226;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+/* Question */
+#question {
+    font-size: 20px;
+    color: #111827;
+    margin: 20px 0;
+}
+
+/* Options */
+.option {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    font-size: 16px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #457b9d, #1d3557);
+    color: white;
+    transition: 0.25s ease;
+}
+
+.option:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 12px 25px rgba(29,53,87,0.45);
+}
+
+/* Correct / Wrong feedback (JS inline color bhi chalega) */
+.option.correct {
+    background: linear-gradient(135deg, #2ecc71, #1e9e5a);
+}
+
+.option.wrong {
+    background: linear-gradient(135deg, #e63946, #b11226);
+}
+
+/* Info */
+#info {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #374151;
+}
+/* ===== OPEN CONSTITUTION BOOK ===== */
+.book {
+    width: 200px;
+    height: 120px;
+    margin: 0 auto 25px;
+    display: flex;
+    perspective: 800px;
+}
+
+.book .page {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, #b11226, #780000);
+    border-radius: 10px;
+    position: relative;
+    box-shadow: inset 0 0 12px rgba(255,255,255,0.25),
+                0 8px 18px rgba(0,0,0,0.4);
+}
+
+.book .left {
+    transform: rotateY(12deg);
+    border-right: 3px solid #5a0000;
+}
+
+.book .right {
+    transform: rotateY(-12deg);
+    border-left: 3px solid #5a0000;
+    background: linear-gradient(135deg, #780000, #3a0000);
+}
+
+.book .page span {
+    position: absolute;
+    width: 100%;
+    top: 45px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+}
